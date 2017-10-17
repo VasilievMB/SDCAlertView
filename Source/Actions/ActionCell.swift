@@ -3,6 +3,7 @@ import UIKit
 final class ActionCell: UICollectionViewCell {
 
     @IBOutlet private(set) var titleLabel: UILabel!
+    @IBOutlet private(set) var imageView: UIImageView!
     @IBOutlet private var highlightedBackgroundView: UIView!
 
     private var textColor: UIColor?
@@ -27,6 +28,8 @@ final class ActionCell: UICollectionViewCell {
 
         self.highlightedBackgroundView.backgroundColor = visualStyle.actionHighlightColor
 
+        self.imageView.image = action.image
+        
         self.setupAccessibility(using: action)
     }
 

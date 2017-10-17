@@ -34,13 +34,13 @@ final class DemoViewController: UITableViewController {
         let buttons = Int(self.buttonCountTextField.content ?? "0")!
         for i in 0..<buttons {
             if i == 0 {
-                alert.addAction(AlertAction(title: "Cancel", style: .preferred))
+                alert.addAction(AlertAction(title: "Cancel", style: .preferred, image: #imageLiteral(resourceName: "doc")))
             } else if i == 1 {
-                alert.addAction(AlertAction(title: "OK", style: .normal))
+                alert.addAction(AlertAction(title: "OK", style: .normal, image: #imageLiteral(resourceName: "doc")))
             } else if i == 2 {
-                alert.addAction(AlertAction(title: "Delete", style: .destructive))
+                alert.addAction(AlertAction(title: "Delete", style: .destructive, image: #imageLiteral(resourceName: "doc")))
             } else {
-                alert.addAction(AlertAction(title: "Button \(i)", style: .normal))
+                alert.addAction(AlertAction(title: "Button \(i)", style: .normal, image: #imageLiteral(resourceName: "doc")))
             }
         }
 
