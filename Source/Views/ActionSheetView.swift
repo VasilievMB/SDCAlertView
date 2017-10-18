@@ -1,7 +1,7 @@
 final class ActionSheetView: UIView, AlertControllerViewRepresentable {
 
-    @IBOutlet var titleLabel: AlertLabel!
-    @IBOutlet var messageLabel: AlertLabel!
+    @IBOutlet var titleLabel: AlertLabel?
+    @IBOutlet var messageLabel: AlertLabel?
     @IBOutlet var actionsCollectionView: ActionsCollectionView!
     @IBOutlet var contentView: UIView!
     @IBOutlet private var primaryView: UIView!
@@ -11,20 +11,14 @@ final class ActionSheetView: UIView, AlertControllerViewRepresentable {
     @IBOutlet private var contentViewConstraints: [NSLayoutConstraint]!
     @IBOutlet private var collectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var cancelHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private var titleWidthConstraint: NSLayoutConstraint!
-
+    
     var actions: [AlertAction] = []
 
     var actionTappedHandler: ((AlertAction) -> Void)? {
         didSet { self.actionsCollectionView.actionTapped = self.actionTappedHandler }
     }
 
-    var visualStyle: AlertVisualStyle! {
-        didSet {
-            let widthOffset = self.visualStyle.contentPadding.left + self.visualStyle.contentPadding.right
-            self.titleWidthConstraint.constant -= widthOffset
-        }
-    }
+    var visualStyle: AlertVisualStyle!
 
     private var cancelAction: AlertAction? {
         didSet { self.cancelLabel.attributedText = self.cancelAction?.attributedTitle }
@@ -35,7 +29,7 @@ final class ActionSheetView: UIView, AlertControllerViewRepresentable {
 
         self.actionsCollectionView.actions = self.actions
         self.actionsCollectionView.visualStyle = self.visualStyle
-
+        
         self.collectionViewHeightConstraint.constant = self.actionsCollectionView.displayHeight
         self.collectionViewHeightConstraint.isActive = true
 
@@ -63,7 +57,7 @@ final class ActionSheetView: UIView, AlertControllerViewRepresentable {
 
         let showContentView = self.contentView.subviews.count > 0
         self.contentView.isHidden = !showContentView
-        self.contentViewConstraints.forEach { $0.isActive = showContentView }
+//        self.contentViewConstraints.forEach { $0.isActive = showContentView }
     }
 
     func addDragTapBehavior() {

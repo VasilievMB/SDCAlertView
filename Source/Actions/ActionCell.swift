@@ -4,9 +4,20 @@ final class ActionCell: UICollectionViewCell {
 
     @IBOutlet private(set) var titleLabel: UILabel!
     @IBOutlet private(set) var imageView: UIImageView!
+    @IBOutlet private var titleLabelWidth: NSLayoutConstraint!
+    @IBOutlet private var titleLeading: NSLayoutConstraint!
     @IBOutlet private var highlightedBackgroundView: UIView!
 
     private var textColor: UIColor?
+    
+    var textWidth: CGFloat {
+        get {
+            return titleLabelWidth.constant
+        }
+        set {
+            titleLabelWidth.constant = newValue
+        }
+    }
     
     var isEnabled = true {
         didSet { self.titleLabel.isEnabled = self.isEnabled }

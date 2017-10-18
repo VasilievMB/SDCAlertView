@@ -1,7 +1,7 @@
 final class AlertView: UIView, AlertControllerViewRepresentable {
 
-    var titleLabel: AlertLabel! = AlertLabel()
-    var messageLabel: AlertLabel! = AlertLabel()
+    var titleLabel: AlertLabel? = AlertLabel()
+    var messageLabel: AlertLabel? = AlertLabel()
     var actionsCollectionView: ActionsCollectionView! = ActionsCollectionView()
     var contentView: UIView! = UIView()
     var actions: [AlertAction] = []
@@ -48,8 +48,8 @@ final class AlertView: UIView, AlertControllerViewRepresentable {
 
     convenience init() {
         self.init(frame: .zero)
-        self.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-        self.messageLabel.font = UIFont.systemFont(ofSize: 13)
+        self.titleLabel!.font = UIFont.boldSystemFont(ofSize: 17)
+        self.messageLabel!.font = UIFont.systemFont(ofSize: 13)
     }
 
     func prepareLayout() {
@@ -142,27 +142,29 @@ final class AlertView: UIView, AlertControllerViewRepresentable {
         let insets = UIEdgeInsets(top: 0, left: contentPadding.left, bottom: 0, right: -contentPadding.right)
 
         NSLayoutConstraint.activate([
-            self.titleLabel.firstBaselineAnchor.constraint(equalTo: self.topAnchor,
+            self.titleLabel!.firstBaselineAnchor.constraint(equalTo: self.topAnchor,
                                                            constant: contentPadding.top),
-            self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: insets.left),
-            self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: insets.right),
+            self.titleLabel!.leftAnchor.constraint(equalTo: self.leftAnchor, constant: insets.left),
+            self.titleLabel!.rightAnchor.constraint(equalTo: self.rightAnchor, constant: insets.right),
         ])
 
-        self.pinBottomOfScrollView(to: self.messageLabel, withPriority: .defaultLow)
+        if let messageLabel = self.messageLabel {
+            self.pinBottomOfScrollView(to: messageLabel, withPriority: .defaultLow)
+        }
 
     }
 
     private func createMessageLabelConstraints() {
         let contentPadding = self.visualStyle.contentPadding
         NSLayoutConstraint.activate([
-            self.messageLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: contentPadding.left),
-            self.messageLabel.rightAnchor.constraint(equalTo: self.rightAnchor,
+            self.messageLabel!.leftAnchor.constraint(equalTo: self.leftAnchor, constant: contentPadding.left),
+            self.messageLabel!.rightAnchor.constraint(equalTo: self.rightAnchor,
                                         constant: -contentPadding.right),
-            self.messageLabel.firstBaselineAnchor.constraint(equalTo: self.titleLabel.lastBaselineAnchor,
+            self.messageLabel!.firstBaselineAnchor.constraint(equalTo: self.titleLabel!.lastBaselineAnchor,
                                                             constant: self.visualStyle.verticalElementSpacing)
         ])
 
-        self.pinBottomOfScrollView(to: self.messageLabel, withPriority: .defaultLow + 1.0)
+        self.pinBottomOfScrollView(to: self.messageLabel!, withPriority: .defaultLow + 1.0)
     }
 
     private func createTextFieldsConstraints() {
@@ -177,7 +179,7 @@ final class AlertView: UIView, AlertControllerViewRepresentable {
         let widthOffset = self.visualStyle.contentPadding.left + self.visualStyle.contentPadding.right
 
         NSLayoutConstraint.activate([
-            textFieldsView.topAnchor.constraint(equalTo: self.messageLabel.lastBaselineAnchor,
+            textFieldsView.topAnchor.constraint(equalTo: self.messageLabel!.lastBaselineAnchor,
                                                 constant: self.visualStyle.verticalElementSpacing),
             textFieldsView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -widthOffset),
             textFieldsView.centerXAnchor.constraint(equalTo: self.centerXAnchor),

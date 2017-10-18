@@ -13,8 +13,8 @@ protocol AlertControllerViewRepresentable: class {
 
     var topView: UIView { get }
 
-    var titleLabel: AlertLabel! { get }
-    var messageLabel: AlertLabel! { get }
+    var titleLabel: AlertLabel? { get }
+    var messageLabel: AlertLabel? { get }
     var actionsCollectionView: ActionsCollectionView! { get }
 
     func add(_ behaviors: AlertBehaviors)
@@ -26,13 +26,13 @@ protocol AlertControllerViewRepresentable: class {
 extension AlertControllerViewRepresentable where Self: UIView {
 
     var title: NSAttributedString? {
-        get { return self.titleLabel.attributedText }
-        set { self.titleLabel.attributedText = newValue }
+        get { return self.titleLabel?.attributedText }
+        set { self.titleLabel?.attributedText = newValue }
     }
 
     var message: NSAttributedString? {
-        get { return self.messageLabel.attributedText }
-        set { self.messageLabel.attributedText = newValue }
+        get { return self.messageLabel?.attributedText }
+        set { self.messageLabel?.attributedText = newValue }
     }
 
     var topView: UIView { return self }
