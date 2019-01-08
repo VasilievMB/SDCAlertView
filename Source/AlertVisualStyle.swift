@@ -81,11 +81,11 @@ open class AlertVisualStyle: NSObject {
 
     /// The font for an action sheet's preferred action
     @objc
-    public var actionSheetPreferredFont = UIFont.boldSystemFont(ofSize: 20)
+    public var actionSheetPreferredFont = UIFont.boldSystemFont(ofSize: 17)
 
     /// The font for an action sheet's other actions
     @objc
-    public var actionSheetNormalFont = UIFont.systemFont(ofSize: 20)
+    public var actionSheetNormalFont = UIFont.systemFont(ofSize: 17)
 
     /// The style of the alert.
     private let alertStyle: AlertControllerStyle

@@ -4,34 +4,8 @@ private let kActionCellIdentifier = "actionCell"
 
 class ActionsCollectionView: UICollectionView {
 
-    var actions: [AlertAction] = [] {
-        didSet {
-            updateTextWidth()
-        }
-    }
+    var actions: [AlertAction] = []
     
-    private func maxTitleWidth() -> CGFloat? {
-        let widths: [CGFloat] = actions.map { action in
-            if let title = action.attributedTitle {
-                let attributes = [ NSAttributedStringKey.font : visualStyle.font(for: action) ]
-                let str = NSAttributedString(string: title.string, attributes: attributes)
-                return str.size().width
-            } else {
-                return 0
-            }
-        }
-        return widths.max()
-    }
-    
-    private func updateTextWidth() {
-        guard visualStyle != nil else {
-            return
-        }
-        textWidth = ceil(maxTitleWidth() ?? 0)
-    }
-    
-    private var textWidth: CGFloat = 0
-
     var visualStyle: AlertVisualStyle! {
         didSet {
             guard let layout = self.collectionViewLayout as? ActionsCollectionViewFlowLayout else {
@@ -39,8 +13,6 @@ class ActionsCollectionView: UICollectionView {
             }
 
             layout.visualStyle = self.visualStyle
-            
-            updateTextWidth()
         }
     }
 
@@ -132,7 +104,6 @@ extension ActionsCollectionView: UICollectionViewDataSource {
             for: indexPath) as? ActionCell
         let action = self.actions[(indexPath as NSIndexPath).item]
         cell?.set(action, with: self.visualStyle)
-        cell?.textWidth = textWidth
         return cell!
     }
 }

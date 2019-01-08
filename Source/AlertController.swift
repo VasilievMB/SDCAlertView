@@ -354,12 +354,10 @@ public class AlertController: UIViewController {
 
     private func addChromeTapHandlerIfNecessary() {
         if self.behaviors.contains(.dismissOnOutsideTap) {
-            return
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chromeTapped(_:)))
+            tapGesture.cancelsTouchesInView = false
+            self.view.addGestureRecognizer(tapGesture)
         }
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chromeTapped(_:)))
-        tapGesture.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tapGesture)
     }
 
     @objc
