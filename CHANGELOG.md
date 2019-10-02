@@ -1,5 +1,35 @@
 # CHANGELOG
 
+### 10.0
+This release brings Swift 5.0 compatibility.
+
+### 9.0.1
+**Bug Fixes:**
+- Fixes incorrect margins for new iPhones
+
+## 9.0
+This release brings Swift 4.2 compatibility.
+
+### 8.1.1
+**Bug Fixes:**
+- Fixes incorrect spacing when an action sheet doesn't have a label
+
+## 8.1
+This release brings Swift 4.1 compatibility.
+
+**Bug Fixes:**
+- Fixes build issues when using the new build system and CocoaPods
+- Fixes a missing `contentView` in action sheets
+
+## 8.0.2
+**Bug Fixes:**
+- Fixes the inverted `dismissOnOutsideTap` behavior for alert views
+- Hides action sheet labels when no title or subtitle are provided
+- Fixes action sheet layout issues on iPhone X
+- Invokes the `preferredAction` when the return key is hit on a hardware
+  keyboard
+- Return no `preferredAction` when the style of the alert is an action sheet
+
 ### 8.0.1
 **Bug Fixes:**
 - Fixes a layout issue when creating an alert with a custom content view

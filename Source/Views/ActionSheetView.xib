@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -47,7 +47,6 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.50487625838926176" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="j3f-QM-C8G" secondAttribute="bottom" id="00Y-xC-DOe"/>
                         <constraint firstAttribute="trailing" secondItem="j3f-QM-C8G" secondAttribute="trailing" id="6aj-k7-1ot"/>
@@ -84,13 +83,12 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUT-3J-nYJ">
-                            <rect key="frame" x="135" y="18" width="53" height="20.5"/>
+                            <rect key="frame" x="135" y="18.5" width="53" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="0.50487625840000006" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="pnK-LD-y3N" secondAttribute="trailing" id="EqI-0c-9jQ"/>
                         <constraint firstItem="2eU-tu-ceL" firstAttribute="top" secondItem="Q3g-KU-XeF" secondAttribute="top" id="Gdi-Wo-FBZ"/>
@@ -126,10 +124,6 @@
                 <outlet property="collectionViewHeightConstraint" destination="BSo-6l-mGc" id="5Xd-gO-WMB"/>
                 <outlet property="contentView" destination="olF-R0-P3x" id="8H0-HO-E4y"/>
                 <outlet property="primaryView" destination="ZiE-E8-Ngj" id="ADf-I4-R1v"/>
-                <outletCollection property="contentViewConstraints" destination="KRp-CK-3TT" collectionClass="NSMutableArray" id="P1o-q9-kI1"/>
-                <outletCollection property="contentViewConstraints" destination="zkC-9f-pQS" collectionClass="NSMutableArray" id="nFp-rM-WRv"/>
-                <outletCollection property="contentViewConstraints" destination="JIF-kg-XSN" collectionClass="NSMutableArray" id="hLe-mz-ynu"/>
-                <outletCollection property="contentViewConstraints" destination="nTV-Fr-ik3" collectionClass="NSMutableArray" id="ByB-o6-ETJ"/>
             </connections>
             <point key="canvasLocation" x="321" y="503"/>
         </view>

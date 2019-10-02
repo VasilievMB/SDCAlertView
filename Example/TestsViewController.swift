@@ -55,7 +55,7 @@ class TestsViewController: UITableViewController {
             case 8:
                 let alert = AlertController(title: "Title", message: "Message")
                 let contentView = alert.contentView
-                let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                let spinner = UIActivityIndicatorView(style: .gray)
                 spinner.translatesAutoresizingMaskIntoConstraints = false
                 spinner.startAnimating()
                 contentView.addSubview(spinner)
@@ -75,6 +75,21 @@ class TestsViewController: UITableViewController {
                 let alert = AlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
                 let action = AlertAction(title: "OK", style: .normal)
                 action.accessibilityIdentifier = "button"
+                alert.addAction(action)
+                alert.present()
+            
+            case 11:
+                let alert = AlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
+                let contentView = alert.contentView
+                let spinner = UIActivityIndicatorView(style: .gray)
+                spinner.translatesAutoresizingMaskIntoConstraints = false
+                spinner.startAnimating()
+                contentView.addSubview(spinner)
+                spinner.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+                spinner.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+                spinner.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+                let action = AlertAction(title: "Cancel", style: .normal)
+                action.accessibilityIdentifier = "cancel"
                 alert.addAction(action)
                 alert.present()
             

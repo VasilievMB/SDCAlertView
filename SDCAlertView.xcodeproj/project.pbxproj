@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BA53BDB1F31D23D003854F3 /* UIView+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA53BDA1F31D23D003854F3 /* UIView+Accessibility.swift */; };
+		894DA5AB201C73B400603715 /* Bundle+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894DA5AA201C73B400603715 /* Bundle+Convenience.swift */; };
 		D23B53751BF473BC00AB5BBE /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B53741BF473BC00AB5BBE /* AlertView.swift */; };
 		D23B53771BF473CC00AB5BBE /* ActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B53761BF473CC00AB5BBE /* ActionSheetView.swift */; };
 		D2515EC41BC1A7D500ED606F /* SDCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = D2515EC31BC1A7D500ED606F /* SDCAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,12 +29,14 @@
 		D2515EDC1BC1A85800ED606F /* AlertVisualStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C30A811BC120C900984652 /* AlertVisualStyle.swift */; };
 		D253B1C81C2AC78D00C37E0F /* AlertBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253B1C71C2AC78D00C37E0F /* AlertBehaviors.swift */; };
 		D2A48B441C2E09CE009DD715 /* AlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A48B431C2E09CE009DD715 /* AlertController+Convenience.swift */; };
+		D2AC7438213BA0CC003DF706 /* UIViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC7437213BA0CC003DF706 /* UIViewController+Layout.swift */; };
 		D2DE585A1C08261E0041DFDE /* ActionSheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DE58591C08261E0041DFDE /* ActionSheetView.xib */; };
 		D2DE585B1C082F460041DFDE /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C30A751BC120C900984652 /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BA53BDA1F31D23D003854F3 /* UIView+Accessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Accessibility.swift"; sourceTree = "<group>"; };
+		894DA5AA201C73B400603715 /* Bundle+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Convenience.swift"; sourceTree = "<group>"; };
 		D23B53741BF473BC00AB5BBE /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D23B53761BF473CC00AB5BBE /* ActionSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetView.swift; sourceTree = "<group>"; };
 		D2515EC11BC1A7D500ED606F /* SDCAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDCAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +44,7 @@
 		D2515EC51BC1A7D500ED606F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D253B1C71C2AC78D00C37E0F /* AlertBehaviors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertBehaviors.swift; sourceTree = "<group>"; };
 		D2A48B431C2E09CE009DD715 /* AlertController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AlertController+Convenience.swift"; sourceTree = "<group>"; };
+		D2AC7437213BA0CC003DF706 /* UIViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Layout.swift"; sourceTree = "<group>"; };
 		D2C30A701BC120C900984652 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		D2C30A711BC120C900984652 /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		D2C30A721BC120C900984652 /* ActionsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsCollectionView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				D2C30A771BC120C900984652 /* AlertLabel.swift */,
 				D23B53741BF473BC00AB5BBE /* AlertView.swift */,
 				0BA53BDA1F31D23D003854F3 /* UIView+Accessibility.swift */,
+				D2AC7437213BA0CC003DF706 /* UIViewController+Layout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				D2A48B431C2E09CE009DD715 /* AlertController+Convenience.swift */,
 				D2C30A751BC120C900984652 /* AlertController.swift */,
 				D2C30A811BC120C900984652 /* AlertVisualStyle.swift */,
+				894DA5AA201C73B400603715 /* Bundle+Convenience.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -204,7 +210,7 @@
 				TargetAttributes = {
 					D2515EC01BC1A7D500ED606F = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -214,6 +220,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -254,6 +261,8 @@
 				D23B53771BF473CC00AB5BBE /* ActionSheetView.swift in Sources */,
 				D2515EDA1BC1A85800ED606F /* AlertControllerViewRepresentable.swift in Sources */,
 				D2515ECF1BC1A84D00ED606F /* ActionsCollectionView.swift in Sources */,
+				894DA5AB201C73B400603715 /* Bundle+Convenience.swift in Sources */,
+				D2AC7438213BA0CC003DF706 /* UIViewController+Layout.swift in Sources */,
 				D23B53751BF473BC00AB5BBE /* AlertView.swift in Sources */,
 				D2DE585B1C082F460041DFDE /* AlertController.swift in Sources */,
 				D2A48B441C2E09CE009DD715 /* AlertController+Convenience.swift in Sources */,
@@ -294,7 +303,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -324,7 +333,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ScottyDoesntCode.SDCAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -366,6 +375,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -397,6 +407,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

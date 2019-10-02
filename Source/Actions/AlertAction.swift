@@ -1,33 +1,16 @@
 import UIKit
 
-/**
-The action's style
-
-- normal:      The action will have default font and text color
-- preferred:   The action will take a style that indicates it's the preferred option
-- destructive: The action will convey that this action will do something destructive
-*/
-@objc(SDCAlertActionStyle)
-public enum AlertActionStyle: Int {
-    case normal
-    case preferred
-    case destructive
-}
-
 @objc(SDCAlertAction)
 public class AlertAction: NSObject {
-
-    /**
-    Creates an action with a plain title.
-
-    - parameter title:   An optional title for the action
-    - parameter style:   The action's style
-    - parameter handler: An optional closure that's called when the user taps on this action
-    */
+    /// Creates an action with a plain title.
+    ///
+    /// parameter title:   An optional title for the action
+    /// parameter style:   The action's style
+    /// parameter handler: An optional closure that's called when the user taps on this action
     @objc
     public convenience init(
         title: String?,
-        style: AlertActionStyle,
+        style: AlertAction.Style,
         image: UIImage? = nil,
         handler: ((AlertAction) -> Void)? = nil)
     {
@@ -38,17 +21,15 @@ public class AlertAction: NSObject {
         self.handler = handler
     }
 
-    /**
-    Creates an action with a stylized title.
-
-    - parameter attributedTitle: An optional stylized title
-    - parameter style:           The action's style
-    - parameter handler:         An optional closure that is called when the user taps on this action
-    */
     @objc
+    /// Creates an action with a stylized title.
+    ///
+    /// - parameter attributedTitle: An optional stylized title
+    /// - parameter style:           The action's style
+    /// - parameter handler:         An optional closure that is called when the user taps on this action
     public convenience init(
         attributedTitle: NSAttributedString?,
-        style: AlertActionStyle,
+        style: AlertAction.Style,
         image: UIImage? = nil,
         handler: ((AlertAction) -> Void)? = nil)
     {
@@ -76,7 +57,7 @@ public class AlertAction: NSObject {
 
     /// The action's style.
     @objc
-    internal(set) public var style: AlertActionStyle = .normal
+    internal(set) public var style: AlertAction.Style = .normal
 
     /// The action's button accessibility identifier
     @objc
@@ -94,4 +75,17 @@ public class AlertAction: NSObject {
     
     @objc
     internal(set) var image: UIImage?
+}
+
+extension AlertAction {
+    /// The action's style
+    @objc(SDCAlertActionStyle)
+    public enum Style: Int {
+        /// The action will have default font and text color
+        case normal
+        /// The action will take a style that indicates it's the preferred option
+        case preferred
+        /// The action will convey that this action will do something destructive
+        case destructive
+    }
 }
